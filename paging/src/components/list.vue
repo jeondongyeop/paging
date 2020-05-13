@@ -7,7 +7,7 @@
                 </div>
             </li>
         </ul>
-        <paging v-if="completedLoad" :maxPaging="maxPaging" :setPaging="setPaging" @movePaging="getList"></paging>
+        <paging v-if="completedLoad" :setCount="6" :maxPaging="maxPaging" :setPaging="setPaging" @movePaging="getList"></paging>
     </section>
 </template>
 
@@ -50,7 +50,7 @@ export default {
     getList(clickPaging) {
       const _this = this;
       this.getApi('/list', {
-        count : 8,
+        count : 8,  //리스트 개수
         paging: clickPaging ? clickPaging : _this.setPaging
       },
       function(data) {

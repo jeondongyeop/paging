@@ -26,17 +26,7 @@ app.all('/*', function(req, res, next) {
     next();
   });
 
-app.get('/list', (req, res) => {
-    console.log('통신입장');
-    let list = [];
-    for(let i=1;i <= 38; ++i) {
-        list.push(i);
-    };
-    res.send(list);
-});
 app.post('/list', (req, res) => {
-    console.log(req.body);
-
     const maxListCount = 110;
 
     const count = req.body.count;
